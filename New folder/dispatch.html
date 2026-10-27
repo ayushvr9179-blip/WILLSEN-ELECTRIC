@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WILLSEN ELECTRICS</title>
+
+     <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="logo">
+    <img src="logo.png" alt="WILLSEN Logo">
+</div>
+
+        <nav>
+
+           <a href="index.html">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+          </a>
+
+         <a href="dispatch.html" class="active">
+             <i class="fa-solid fa-truck"></i>
+             <span>Dispatch</span>
+        </a>
+
+            <a href="sales.html">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span>Sales</span>
+            </a>
+
+            <a href="shop-stock.html">
+                <i class="fa-solid fa-box"></i>
+                <span>Shop Stock</span>
+            </a>
+
+            <a href="history.html">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                <span>History</span>
+            </a>
+
+            <a href="backup-report.html">
+                <i class="fa-solid fa-file-pdf"></i>
+                <span>Reports</span>
+            </a>
+
+        </nav>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
+
+        <!-- ===========================
+     Top Bar
+=========================== -->
+
+<header class="topbar">
+
+    <h1>Factory Dispatch</h1>
+
+    <div class="admin">
+        <i class="fa-solid fa-user"></i>
+        <span>Admin</span>
+    </div>
+
+</header>
+
+<!-- ===========================
+     Dispatch Section
+=========================== -->
+
+<section class="dispatch-container">
+
+    <!-- Left Card -->
+
+    <div class="dispatch-card">
+
+        <h2>Add New Dispatch</h2>
+
+        <form>
+
+            <div class="input-group">
+
+                <label>Product</label>
+
+                <select id="product">
+                     <option value="">Select Product</option>
+                </select>
+
+            </div>
+
+            <div class="input-group">
+
+                <label>Quantity</label>
+
+                <input
+                    type="number"
+                    id="quantity"
+                    placeholder="Enter Quantity">
+
+            </div>
+
+            <div class="input-group">
+
+                <label>Date</label>
+
+                <input
+                 type="date"
+                 id="date">
+
+            </div>
+
+            <div class="button-row">
+
+    <button type="button" id="addDispatchProductBtn">
+        + Add Product
+    </button>
+
+</div>
+
+<div class="product-list">
+
+    <table>
+
+        <thead>
+
+            <tr>
+
+                <th>Product</th>
+                <th>Qty</th>
+                <th>Action</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody id="dispatchItems">
+
+        </tbody>
+
+    </table>
+
+</div>
+
+<div class="grand-total">
+
+    <h2>
+
+        Total Items :
+        <span id="dispatchTotal">0</span>
+
+    </h2>
+
+</div>
+
+            <button
+            id="saveBtn"
+            type="button">
+                Save Dispatch
+            </button>
+
+        </form>
+
+    </div>
+
+    <!-- Right Card -->
+
+    <div class="dispatch-card">
+
+        <div class="table-header">
+
+            <h2>Today's Dispatch</h2>
+
+        </div>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Date</th>
+                    <th>Code</th>
+                    <th>Product name</th>
+                    <th>Quantity</th>
+                    <th>Action</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="dispatchTable">
+
+             
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+    </main>
+
+</div>
+
+<!-- ===========================
+     Edit Dispatch Modal
+=========================== -->
+
+<div id="editModal" class="modal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <h2>Edit Dispatch</h2>
+
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+
+        </div>
+
+        <div class="input-group">
+
+            <label>Product</label>
+
+            <select id="editProduct"></select>
+
+        </div>
+
+        <div class="input-group">
+
+            <label>Quantity</label>
+
+            <input
+                type="number"
+                id="editQuantity">
+
+        </div>
+
+        <div class="input-group">
+
+            <label>Date</label>
+
+            <input
+                type="date"
+                id="editDate">
+
+        </div>
+
+        <div class="input-group">
+
+            <label>Remarks</label>
+
+            <textarea
+                id="editRemarks"
+                rows="4"></textarea>
+
+        </div>
+
+        <button id="updateBtn">
+
+            Save Changes
+
+        </button>
+
+    </div>
+
+</div>
+
+<script src="js/low-stock-alert.js"></script>
+<script src="js/products.js"></script>
+<script src="js/dispatch.js"></script>
+</body>
+</html>

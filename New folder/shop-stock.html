@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shop Stock | WILLSEN ELECTRICS</title>
+
+     <link rel="icon" type="image/png" href="favicon.png">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+         <div class="logo">
+    <img src="logo.png" alt="WILLSEN Logo">
+</div>
+
+        <nav>
+
+            <a href="index.html">
+                <i class="fa-solid fa-house"></i>
+                Dashboard
+            </a>
+
+            <a href="dispatch.html">
+                <i class="fa-solid fa-truck"></i>
+                Dispatch
+            </a>
+
+            <a href="sales.html">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Sales
+            </a>
+
+            <a href="shop-stock.html" class="active">
+                <i class="fa-solid fa-box"></i>
+                Shop Stock
+            </a>
+
+            <a href="history.html">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                History
+            </a>
+
+            <a href="backup-report.html">
+                <i class="fa-solid fa-file-pdf"></i>
+                Reports
+            </a>
+
+        </nav>
+
+    </aside>
+
+    <!-- Main -->
+
+    <main class="content">
+
+        <header class="topbar">
+
+            <h1>Current Shop Stock</h1>
+
+        </header>
+
+        <section class="stock-settings">
+            <h2><i class="fa-solid fa-bell" style="color:#2563eb;margin-right:8px"></i>Low-stock message alerts</h2>
+            <p>Set the minimum quantity and the WhatsApp number that should receive the alert.</p>
+            <div class="settings-grid">
+                <div><label for="lowStockThreshold">Alert when stock is below</label><input id="lowStockThreshold" type="number" min="0" value="10" placeholder="e.g. 10"></div>
+                <div><label for="alertPhone">WhatsApp number (with country code)</label><input id="alertPhone" type="tel" placeholder="e.g. 919876543210"></div>
+                <div><label for="alertMode">Alert method</label><select id="alertMode"><option value="whatsapp">WhatsApp message draft</option><option value="browser">Browser notification</option></select></div>
+            </div>
+            <div class="settings-actions">
+                <button type="button" id="saveAlertSettings"><i class="fa-solid fa-floppy-disk"></i> Save alert settings</button>
+                <button type="button" id="sendLowStockAlert" class="secondary-btn"><i class="fa-brands fa-whatsapp"></i> Prepare low-stock message</button>
+            </div>
+            <p class="helper-note">Note: this website currently stores data in your browser. WhatsApp will open with a ready-made message, but you must press Send yourself. Fully automatic WhatsApp/SMS delivery, including when the website is closed, needs a secure server and a messaging service.</p>
+        </section>
+
+        <section class="activity">
+
+            <div class="section-header">
+
+                <h2>Stock List</h2>
+
+                <div class="search-box">
+
+    <input
+        type="text"
+        id="stockSearch"
+        placeholder="Search by Code or Product Name">
+
+</div>
+
+            </div>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Code</th>
+                        <th>Product Name</th>
+                        <th>Current Stock</th>
+                        <th>Status</th>
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="stockTable">
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+</div>
+
+<!-- =========================
+     Edit Stock Modal
+========================= -->
+
+<div id="editStockModal" class="modal">
+
+    <div class="modal-content">
+
+        <h2>Edit Stock</h2>
+
+        <p id="editProductName"></p>
+
+        <label>Current Stock</label>
+
+        <input
+            type="number"
+            id="currentStock"
+            readonly>
+
+        <label>New Stock</label>
+
+        <input
+            type="number"
+            id="newStock"
+            placeholder="Enter New Stock">
+
+        <div class="modal-buttons">
+
+            <button
+                id="saveStockBtn">
+
+                Save
+
+            </button>
+
+            <button
+                id="cancelStockBtn">
+
+                Cancel
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="js/products.js"></script>
+<script src="js/low-stock-alert.js"></script>
+<script src="js/stock.js"></script>
+
+</body>
+</html>

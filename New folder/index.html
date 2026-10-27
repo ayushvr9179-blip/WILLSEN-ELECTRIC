@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WILLSEN ELECTRICS</title>
+
+     <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="logo">
+    <img src="logo.png" alt="WILLSEN Logo">
+</div>
+
+        <nav>
+
+             <a href="index.html"class="active">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+          </a>
+
+         <a href="dispatch.html" >
+             <i class="fa-solid fa-truck"></i>
+             <span>Dispatch</span>
+        </a>
+
+
+            <a href="sales.html" >
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span>Sales</span>
+            </a>
+
+            <a href="shop-stock.html">
+                <i class="fa-solid fa-box"></i>
+                <span>Shop Stock</span>
+            </a>
+
+            <a href="history.html" >
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                <span>History</span>
+            </a>
+
+            <a href="backup-report.html">
+                <i class="fa-solid fa-file-pdf"></i>
+                <span>Reports</span>
+            </a>
+
+        </nav>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
+
+        <header class="topbar">
+            <h1>Dashboard</h1>
+
+            <div class="admin">
+                <i class="fa-solid fa-user"></i>
+                Admin
+            </div>
+        </header>
+
+        <!-- ===========================
+     Dashboard Cards
+=========================== -->
+
+<section class="dashboard-cards">
+
+    <div class="card">
+    <h4>Today's Sales</h4>
+    <h2 id="todaySales">₹ 0</h2>
+</div>
+
+    <div class="card">
+        <h4>Today's Dispatch</h4>
+        <h2 id="todayDispatch">0</h2>
+    </div>
+
+    <div class="card">
+        <h4>Current Shop Stock</h4>
+        <h2 id="totalQuantity">0</h2>
+    </div>
+
+    <div class="card">
+        <h4>Low Stock</h4>
+        <h2 id="totalProducts">0</h2>
+    </div>
+
+</section>
+
+<section class="low-stock-alert">
+
+    <div class="section-header">
+
+        <h2>⚠ Low Stock Alert</h2>
+
+    </div>
+
+    <div id="lowStockList">
+
+        <p>No Low Stock</p>
+
+    </div>
+
+</section>
+
+<!-- ===========================
+     Recent Activity
+=========================== -->
+
+<section class="activity">
+
+    <div class="section-header">
+        <h2>Recent Activity</h2>
+
+        <button>View All</button>
+    </div>
+
+    <table>
+
+        <thead>
+
+            <tr>
+                <th>Date</th>
+                <th>Product</th>
+                <th>Type</th>
+                <th>Quantity</th>
+            </tr>
+
+        </thead>
+
+        <tbody id="recentActivity">
+
+</tbody>
+
+    </table>
+
+</section>
+
+    </main>
+
+</div>
+
+<script src="js/low-stock-alert.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>
