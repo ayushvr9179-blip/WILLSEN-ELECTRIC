@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WILLSEN ELECTRICS</title>
+     
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+         <div class="logo">
+    <img src="logo.png" alt="WILLSEN Logo">
+</div>
+
+        <nav>
+
+             <a href="index.html">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+          </a>
+
+         <a href="dispatch.html" >
+             <i class="fa-solid fa-truck"></i>
+             <span>Dispatch</span>
+        </a>
+
+
+            <a href="sales.html">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span>Sales</span>
+            </a>
+
+            <a href="shop-stock.html">
+                <i class="fa-solid fa-box"></i>
+                <span>Shop Stock</span>
+            </a>
+
+            <a href="history.html" class="active">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                <span>History</span>
+            </a>
+
+            <a href="backup-report.html">
+                <i class="fa-solid fa-file-pdf"></i>
+                <span>Reports</span>
+            </a>
+
+        </nav>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
+
+        <header class="topbar">
+            <h1>Dashboard</h1>
+
+            <div class="admin">
+                <i class="fa-solid fa-user"></i>
+                Admin
+            </div>
+        </header>
+
+        <section class="history-section">
+
+    <div class="section-header">
+
+        <h2>Dispatch History</h2>
+
+    </div>
+
+    <div class="history-filters">
+
+        <select id="searchCode">
+    <option value="">Select Product Code</option>
+</select>
+
+       <input
+    type="text"
+    id="searchProduct"
+    placeholder="Product Name"
+    readonly
+>
+
+       <input type="date" id="filterDate">
+
+        <button id="searchBtn">
+            Search
+        </button>
+
+        <button id="resetBtn">
+            Reset
+        </button>
+
+    </div>
+
+    <div class="table-container">
+
+        <div class="sort-section">
+
+    <label>Sort By</label>
+
+    <select id="sortSelect">
+
+        <option value="latest">Latest First</option>
+
+        <option value="oldest">Oldest First</option>
+
+    </select>
+
+</div>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Date</th>
+                    <th>Code</th>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Remarks</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="historyTable">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <div class="record-count">
+
+        Total Records :
+        <span id="recordCount">0</span>
+
+    </div>
+
+</section>
+
+
+<script src="js/history.js"></script>
+</body>
+</html>

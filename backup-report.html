@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Backup Reports | WILLSEN ELECTRIC</title>
+
+     <link rel="icon" type="image/png" href="favicon.png">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/backup-report.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+    <aside class="sidebar">
+
+    <div class="logo">
+    <img src="logo.png" alt="WILLSEN Logo">
+</div>
+
+    <nav>
+
+        <a href="index.html">
+            <i class="fa-solid fa-house"></i>
+            <span>Dashboard</span>
+        </a>
+
+        <a href="dispatch.html">
+            <i class="fa-solid fa-truck"></i>
+            <span>Dispatch</span>
+        </a>
+
+        <a href="sales.html">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span>Sales</span>
+        </a>
+
+        <a href="shop-stock.html">
+            <i class="fa-solid fa-box"></i>
+            <span>Shop Stock</span>
+        </a>
+
+        <a href="history.html">
+            <i class="fa-solid fa-clock-rotate-left"></i>
+            <span>History</span>
+        </a>
+
+        <a href="backup-report.html" class="active">
+            <i class="fa-solid fa-file-pdf"></i>
+            <span>Reports</span>
+        </a>
+
+    </nav>
+
+</aside>
+    
+    <main class="main-content">
+
+<div class="backup-container">
+
+        <!-- ================= HEADER ================= -->
+
+        <div class="report-header">
+
+            <img src="logo.png"
+                alt="Company Logo"
+                class="company-logo">
+
+            <h2>DAILY REPORT</h2>
+
+        </div>
+
+        <!-- Report Search -->
+
+<div class="search-box">
+
+    <input type="date" id="reportDate">
+
+    <button id="searchReport">
+        <i class="fas fa-search"></i>
+        Search
+    </button>
+
+</div>
+
+<div class="selected-report-date">
+    <strong>Report Date :</strong>
+    <span id="currentReportDate">--</span>
+</div>
+
+        <!-- ================= SALES ================= -->
+
+        <div class="sales-section">
+
+    <div class="sales-heading">
+        <h2>🛒 Sales Details</h2>
+    </div>
+
+    <div id="salesReport"></div>
+
+</div>
+
+        <!-- ================= DISPATCH ================= -->
+
+        <div class="dispatch-section">
+
+    <div class="dispatch-heading">
+        <h2>🚚 Dispatch Details</h2>
+    </div>
+
+    <div id="dispatchReport"></div>
+
+</div>
+
+                <!-- ================= SUMMARY ================= --> 
+
+                 <div class="summary-heading">
+
+        <h3>📊 SUMMARY</h3>
+
+
+        <div id="summaryReport">
+
+            <div class="summary-grid">
+
+    <div class="summary-card">
+        <h4>Sales Records</h4>
+        <p id="salesCount">0</p>
+    </div>
+
+    <div class="summary-card">
+        <h4>Dispatch Records</h4>
+        <p id="dispatchCount">0</p>
+    </div>
+
+    <div class="summary-card">
+        <h4>Total Sales</h4>
+        <p id="totalSales">₹0</p>
+    </div>
+
+    <div class="summary-card">
+        <h4>Total Dispatch Qty</h4>
+        <p id="totalDispatch">0</p>
+    </div>
+
+</div>
+        </div>
+
+       <div class="report-footer">
+
+    <div class="generated-info">
+        <span>
+            <strong>Generated Date :</strong>
+            <span id="generatedDate"></span>
+        </span>
+
+        <span>
+            <strong>Generated Time :</strong>
+            <span id="generatedTime"></span>
+        </span>
+    </div>
+
+    <p class="footer-note">
+        This is a computer-generated report.
+    </p>
+
+</div>  
+
+        <div class="download-section">
+
+            <button id="downloadPDF">
+
+                <i class="fa-solid fa-download"></i>
+
+                Download PDF
+
+            </button>
+
+        </div>
+
+   </div>
+
+</main>
+
+</div>
+
+<!-- jsPDF -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<!-- AutoTable -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+
+<script src="js/backup-report.js"></script>
+
+</body>
+
+</html>
